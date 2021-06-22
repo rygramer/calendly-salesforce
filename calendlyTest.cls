@@ -1,7 +1,7 @@
 @IsTest
 public class calendlyTest {
     @IsTest
-    static void testing_successful_mapping1(){
+    static void testing_successful_mapping(){
         CalendlyAction__c action = new CalendlyAction__c(
             CustomQuestion1__c = 'Budget',
             CustomResponse1__c = '$1,000,000',
@@ -59,10 +59,10 @@ public class calendlyTest {
         	List<calendly.OutputParameters> outputs = calendly.mapping(inputs);
         Test.stopTest();
         
-        system.assertEquals(TRUE, String.isBlank(outputs[0].outputAction.Budget__c));
-        system.assertEquals(TRUE, String.isBlank(outputs[0].outputAction.Top_Challenges__c));
-        system.assertEquals(TRUE, String.isBlank(outputs[0].outputAction.Company_Size__c));
-        system.assertEquals(TRUE, String.isBlank(outputs[0].outputAction.Solution_you_re_interested_in__c));
+        system.assertEquals(TRUE, String.isBlank(outputs[200].outputAction.Budget__c));
+        system.assertEquals(TRUE, String.isBlank(outputs[200].outputAction.Top_Challenges__c));
+        system.assertEquals(TRUE, String.isBlank(outputs[200].outputAction.Company_Size__c));
+        system.assertEquals(TRUE, String.isBlank(outputs[200].outputAction.Solution_you_re_interested_in__c));
         system.assertEquals(action.CustomResponse1__c, outputs[200].outputAction.Why_are_you_a_good_fit__c);
         system.assertEquals(action.CustomResponse2__c, outputs[200].outputAction.Which_position_are_you_interested_in__c);
         system.assertEquals(action.CustomResponse3__c, outputs[200].outputAction.Salary_Requirements__c);
